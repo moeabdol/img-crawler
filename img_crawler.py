@@ -31,8 +31,6 @@ def traverse_site(max_links=10):
             response = requests.get(url)
         except Exception:
             continue
-        # import ipdb
-        # ipdb.set_trace()
         if response.headers["content-type"] != "text/html; charset=utf-8":
             continue
         link_parser_singleton.to_visit.add(url)
